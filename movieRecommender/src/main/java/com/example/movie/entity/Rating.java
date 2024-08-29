@@ -41,6 +41,16 @@ public class Rating {
 		this.finalScore = finalScore;
 		this.createdAt = createdAt;
 	}
+	
+
+	public Rating(Long id, Movie movie, User user, int noveltyScore, int finalScore) {
+		super();
+		this.id = id;
+		this.movie = movie;
+		this.user = user;
+		this.noveltyScore = noveltyScore;
+		this.finalScore = finalScore;
+	}
 
 	public Long getId() {
 		return id;

@@ -26,7 +26,16 @@ public class User implements UserDetails {
 
     private String role;
     
-    @Override
+    
+    public User(Long id, String username, String password, String role) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+
+	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> authorities = new HashSet<>();
         authorities.add(() -> "ROLE_" + role); // Convert role to authority

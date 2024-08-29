@@ -696,3 +696,45 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.webjars:s
 2024-08-29 15:53:02,720 [Worker-308: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-08-29 15:53:02,735 [Worker-308: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-08-29 15:53:02,742 [Worker-308: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 16:10:21,908 [Worker-306: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 16:10:21,929 [Worker-306: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 16:10:21,933 [Worker-306: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 16:11:08,911 [Worker-316: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 16:11:08,927 [Worker-316: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 16:11:08,934 [Worker-316: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 16:56:32,406 [Worker-323: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 16:56:32,408 [Worker-323: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 16:56:32,418 [Worker-323: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 16:57:03,835 [Worker-327: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 16:57:03,836 [Worker-327: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 16:57:03,842 [Worker-327: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:03:35,346 [Worker-328: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:03:35,349 [Worker-328: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:03:35,355 [Worker-328: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:04:24,930 [Worker-323: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:04:24,931 [Worker-323: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:04:24,934 [Worker-323: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:04:37,889 [Worker-325: Launching MovieServiceTest] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.3/junit-platform-launcher-1.10.3.jar
+2024-08-29 17:04:38,142 [Worker-325: Launching MovieServiceTest] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.3/junit-platform-launcher-1.10.3.jar
+2024-08-29 17:07:11,751 [Worker-328: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:07:11,753 [Worker-328: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:07:11,757 [Worker-328: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:09:59,851 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 17:09:59,985 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 17:09:59,987 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:10:46,096 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:10:46,098 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:10:46,101 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:12:34,255 [Worker-335: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 17:12:34,300 [Worker-335: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 17:12:34,303 [Worker-335: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:12:50,154 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:12:50,156 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:12:50,159 [Worker-332: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:14:14,605 [Worker-325: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 17:14:14,613 [Worker-325: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-08-29 17:14:14,618 [Worker-325: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:14:48,487 [Worker-334: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:14:48,489 [Worker-334: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-29 17:14:48,492 [Worker-334: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Gaurav Vedgya\OneDrive\Documents\Persistent\MovieRecommender\movieRecommender\src\test\resources
+2024-08-29 17:16:48,401 [Worker-334: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MovieServiceTest" project="movieRecommender" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.movie.serviceTest.MovieServiceTest" time="1.588" displayname="MovieServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.example.movie.serviceTest.MovieServiceTest]">
+    <testcase name="testGetMovieById" classname="com.example.movie.serviceTest.MovieServiceTest" time="1.575" displayname="testGetMovieById()" uniqueid="[engine:junit-jupiter]/[class:com.example.movie.serviceTest.MovieServiceTest]/[method:testGetMovieById()]"/>
+    <testcase name="testGetAllMovies" classname="com.example.movie.serviceTest.MovieServiceTest" time="0.006" displayname="testGetAllMovies()" uniqueid="[engine:junit-jupiter]/[class:com.example.movie.serviceTest.MovieServiceTest]/[method:testGetAllMovies()]"/>
+    <testcase name="testSaveMovie" classname="com.example.movie.serviceTest.MovieServiceTest" time="0.006" displayname="testSaveMovie()" uniqueid="[engine:junit-jupiter]/[class:com.example.movie.serviceTest.MovieServiceTest]/[method:testSaveMovie()]"/>
+  </testsuite>
+</testrun>

@@ -27,6 +27,13 @@ public class Genre {
 		this.name = name;
 		this.movies = movies;
 	}
+	public Genre(Long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+		
+	}
+	
 
 	public Long getId() {
 		return id;
