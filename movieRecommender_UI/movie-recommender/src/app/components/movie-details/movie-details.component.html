@@ -1,0 +1,5 @@
+<h1>{{ movie.title }}</h1>
+<img [src]="movie.imageUrl" alt="{{ movie.title }}">
+<p>{{ movie.description }}</p>
+<p><strong>Director:</strong> {{ movie.director }}</p>
+<a [routerLink]="['/movies', movie.id, 'recommendations']">View Recommendations</a>

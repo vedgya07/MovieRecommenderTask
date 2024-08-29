@@ -20,9 +20,8 @@ public class Movie {
 
     private String imageUrl;
 
-    @ManyToOne
-    @JoinColumn(name = "director_id")
-    private Director director;
+    
+    private String directorName;
 
     @ManyToMany
     @JoinTable(
@@ -39,13 +38,13 @@ public class Movie {
 	public Movie() {
 	}
 
-	public Movie(Long id, String title, String description, String imageUrl, Director director, Set<Genre> genres) {
+	public Movie(Long id, String title, String description, String imageUrl, String directorName, Set<Genre> genres) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.imageUrl = imageUrl;
-		this.director = director;
+		this.directorName = directorName;
 		this.genres = genres;
 	}
 
@@ -81,12 +80,12 @@ public class Movie {
 		this.imageUrl = imageUrl;
 	}
 
-	public Director getDirector() {
-		return director;
+	public String getDirectorName() {
+		return directorName;
 	}
 
-	public void setDirector(Director director) {
-		this.director = director;
+	public void setDirectorName(String directorName) {
+		this.directorName  = directorName;
 	}
 
 	public Set<Genre> getGenres() {
@@ -100,7 +99,7 @@ public class Movie {
 	@Override
 	public String toString() {
 		return "Movie [id=" + id + ", title=" + title + ", description=" + description + ", imageUrl=" + imageUrl
-				+ ", director=" + director + ", genres=" + genres + "]";
+				+ ", director=" + directorName + ", genres=" + genres + "]";
 	}
 
     

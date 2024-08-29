@@ -5,35 +5,62 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.movie.entity.Movie;
+import com.example.movie.exception.InvalidCredentialsException;
+import com.example.movie.exception.InvalidInputException;
+import com.example.movie.exception.ResourceNotFoundException;
 import com.example.movie.service.MovieService;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/movies")
+@Tag(name = "Movie", description = "APIs for managing movies")
 public class MovieController {
 
     @Autowired
     private MovieService movieService;
 
+    @Operation(summary = "Get all movies", description = "Retrieve a list of all movies.")
     @GetMapping
-    public List<Movie> getAllMovies() {
-        return movieService.getAllMovies();
+    public List<Movie> getAllMovies() throws InvalidCredentialsException {
+        try {
+        	return movieService.getAllMovies();
+        }catch (Exception e) {
+        	throw e;
+        }
     }
 
+    @Operation(summary = "Get movie by ID", description = "Retrieve a movie by its ID.")
     @GetMapping("/{id}")
-    public ResponseEntity<Movie> getMovieById(@PathVariable Long id) {
-        return ResponseEntity.ok(movieService.getMovieById(id));
+    public ResponseEntity<Movie> getMovieById(@PathVariable Long id)throws InvalidCredentialsException, ResourceNotFoundException {
+       try {
+    	   return ResponseEntity.ok(movieService.getMovieById(id));
+       }catch (Exception e) {
+    	   throw e;
+       }
     }
 
+    @Operation(summary = "Create a new movie", description = "Add a new movie to the catalog.")
     @PostMapping
-    public ResponseEntity<Movie> createMovie(@RequestBody Movie movie) {
-        return ResponseEntity.ok(movieService.saveMovie(movie));
+    public ResponseEntity<Movie> createMovie(@RequestBody Movie movie)throws InvalidCredentialsException, InvalidInputException {
+        try {
+        	return ResponseEntity.ok(movieService.saveMovie(movie));        
+        }catch (Exception e) {
+        	throw e;
+        }
     }
 
+    @Operation(summary = "Delete a movie", description = "Delete a movie by its ID.")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMovie(@PathVariable Long id) {
-        movieService.deleteMovie(id);
+    public ResponseEntity<Void> deleteMovie(@PathVariable Long id)throws InvalidCredentialsException, ResourceNotFoundException {
+        try{
+        	movieService.deleteMovie(id);
         return ResponseEntity.noContent().build();
+        }catch (Exception e) {
+        	throw e;
+        }
     }
 }

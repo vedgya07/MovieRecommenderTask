@@ -22,20 +22,32 @@ public class RecommendationService {
     @Autowired
     private RatingRepository ratingRepository;
 
-    public List<Movie> getSimilarMovies(Long movieId) {
-        // Basic similarity based on genre
-        Movie movie = movieRepository.findById(movieId).orElseThrow(() -> new RuntimeException("Movie not found"));
-        Set<Genre> genres = movie.getGenres();
-        return movieRepository.findByGenresIn(movie.getGenres());
+  
+    public List<Movie> getSimilarMovies(Movie movie) {
+        return movieRepository.findByGenresIn(movie.getGenres())
+                .stream()
+                .filter(m -> !m.equals(movie)) // Excluding the original movie
+                .collect(Collectors.toList());
     }
 
-    public List<Movie> getMoviesLikedBySimilarUsers(Long movieId) {
-        // Basic recommendation based on users who liked the same movie
-        List<Long> userIds = ratingRepository.findByMovieId(movieId)
-                .stream()
+    
+    
+ // Get recommended movies based on other users' ratings
+    public List<Movie> getRecommendedMovies(Long movieId) {
+        List<Rating> ratings = ratingRepository.findByMovieId(movieId);
+
+        // Get users who rated the movie
+        List<Long> userIds = ratings.stream()
                 .map(Rating -> Rating.getUser().getId())
+                .distinct()
                 .collect(Collectors.toList());
-        
-        return movieRepository.findDistinctByRatings_UserIdIn(userIds);
+
+        // Find movies rated by these users
+        return ratingRepository.findByUserIdIn(userIds)
+                .stream()
+                .map(Rating::getMovie)
+                .distinct()
+                .filter(movie -> !movie.getId().equals(movieId)) // Exclude the original movie
+                .collect(Collectors.toList());
     }
 }

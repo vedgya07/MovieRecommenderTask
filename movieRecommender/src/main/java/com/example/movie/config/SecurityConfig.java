@@ -34,14 +34,14 @@ public class SecurityConfig {
             .and()
             .formLogin()
             .and()
-            .httpBasic(); // For simplicity, use HTTP Basic authentication for testing
+            .httpBasic(); // For simplicity, using HTTP Basic authentication for testing
 
         return http.build();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-       // return NoOpPasswordEncoder.getInstance(); // Use NoOpPasswordEncoder for no password encoding
+       // return NoOpPasswordEncoder.getInstance(); // for no password encoding
     	return new BCryptPasswordEncoder();
     }
 }
