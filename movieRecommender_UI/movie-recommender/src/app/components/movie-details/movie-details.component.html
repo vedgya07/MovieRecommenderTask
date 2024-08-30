@@ -1,5 +1,24 @@
-<h1>{{ movie.title }}</h1>
-<img [src]="movie.imageUrl" alt="{{ movie.title }}">
-<p>{{ movie.description }}</p>
-<p><strong>Director:</strong> {{ movie.director }}</p>
-<a [routerLink]="['/movies', movie.id, 'recommendations']">View Recommendations</a>
+<div *ngIf="movie" class="movie-details">
+    <mat-card>
+        <img mat-card-image [src]="movie.imageUrl" alt="{{movie.title}}">
+        <mat-card-content>
+          <h2>{{ movie.title }}</h2>
+          <p>{{ movie.description }}</p>
+          <p><strong>Director:</strong> {{ movie.directorName }}</p>
+          <button mat-raised-button color="primary" (click)="fetchRecommendations()">Get Recommendations</button>
+        </mat-card-content>
+      </mat-card>
+      <div *ngIf="recommendations.length > 0">
+        <h3>Recommended Movies</h3>
+        <mat-card *ngFor="let recMovie of recommendations" class="movie-card">
+          <img mat-card-image [src]="recMovie.imageUrl" alt="{{recMovie.title}}">
+          <mat-card-content>
+            <h2>{{ recMovie.title }}</h2>
+            <p>{{ recMovie.description }}</p>
+            <button mat-raised-button color="primary" [routerLink]="['/movies', recMovie.id]">View Details</button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    
+  

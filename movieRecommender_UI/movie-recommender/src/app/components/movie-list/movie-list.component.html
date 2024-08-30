@@ -1,7 +1,11 @@
-<h1>Movie List</h1>
-<div *ngFor="let movie of movies">
-  <h2>{{ movie.title }}</h2>
-  <img [src]="movie.imageUrl" alt="{{ movie.title }}">
-  <p>{{ movie.description }}</p>
-  <a [routerLink]="['/movies', movie.id]">View Details</a>
-</div>
+<div class="movie-list">
+    <mat-card *ngFor="let movie of movies" class="movie-card">
+      <img mat-card-image [src]="movie.imageUrl" alt="{{movie.title}}">
+      <mat-card-content>
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.description }}</p>
+        <button mat-raised-button color="primary" [routerLink]="['/movies', movie.id]">View Details</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

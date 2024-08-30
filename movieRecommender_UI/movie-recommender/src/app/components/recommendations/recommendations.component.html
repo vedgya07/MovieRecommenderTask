@@ -1,6 +1,26 @@
-<h1>Recommended Movies</h1>
-<div *ngFor="let movie of recommendedMovies">
-  <h2>{{ movie.title }}</h2>
-  <img [src]="movie.imageUrl" alt="{{ movie.title }}">
-  <p>{{ movie.description }}</p>
-</div>
+<div class="recommendations">
+    <mat-card>
+      <mat-card-content>
+        <h2>Recommendations</h2>
+        <mat-form-field appearance="fill">
+          <mat-label>Select Movie</mat-label>
+          <mat-select [(ngModel)]="selectedMovieId">
+            <mat-option *ngFor="let movie of movies" [value]="movie.id">{{ movie.title }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="fetchRecommendations()">Get Recommendations</button>
+        <div *ngIf="recommendations.length > 0">
+          <h3>Recommended Movies</h3>
+          <mat-card *ngFor="let recMovie of recommendations" class="movie-card">
+            <img mat-card-image [src]="recMovie.imageUrl" alt="{{recMovie.title}}">
+            <mat-card-content>
+              <h2>{{ recMovie.title }}</h2>
+              <p>{{ recMovie.description }}</p>
+              <button mat-raised-button color="primary" [routerLink]="['/movies', recMovie.id]">View Details</button>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

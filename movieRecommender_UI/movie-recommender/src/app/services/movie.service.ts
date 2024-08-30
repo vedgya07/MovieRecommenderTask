@@ -1,33 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-interface Movie {
-  id: number;
-  title: string;
-  description: string;
-  director: string;
-  imageUrl: string;
-  genres: string[];
-}
+import { environment } from '../../environments/environment';
+import { Movie } from '../models/movie.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  private baseUrl = 'http://localhost:8080/api/movies';
+
+  private apiUrl = `${environment.apiUrl}/movies`;
 
   constructor(private http: HttpClient) { }
 
-  getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.baseUrl}`);
+  getAllMovies(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.apiUrl);
   }
 
   getMovieById(id: number): Observable<Movie> {
-    return this.http.get<Movie>(`${this.baseUrl}/${id}`);
-  }
-
-  getRecommendations(movieId: number): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.baseUrl}/${movieId}/recommendations`);
+    return this.http.get<Movie>(`${this.apiUrl}/${id}`);
   }
 }

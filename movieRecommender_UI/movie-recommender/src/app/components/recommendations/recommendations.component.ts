@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../services/movie.service';
+import { RecommendationService } from '../../services/recommendation.service';
+import { Movie } from '../../models/movie.model';
 
 @Component({
   selector: 'app-recommendations',
@@ -9,14 +10,26 @@ import { MovieService } from '../../services/movie.service';
 })
 export class RecommendationsComponent implements OnInit {
 
-  recommendedMovies: any[] = [];
+  movies: Movie[] = [];
+  recommendations: Movie[] = [];
+  selectedMovieId: number | undefined;
 
-  constructor(private route: ActivatedRoute, private movieService: MovieService) { }
+  constructor(
+    private movieService: MovieService,
+    private recommendationService: RecommendationService
+  ) { }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')!;
-    this.movieService.getRecommendations(id).subscribe((data: any) => {
-      this.recommendedMovies = data;
+    this.movieService.getAllMovies().subscribe(data => {
+      this.movies = data;
     });
+  }
+
+  fetchRecommendations(): void {
+    if (this.selectedMovieId) {
+      this.recommendationService.getRecommendedMovies(this.selectedMovieId).subscribe(data => {
+        this.recommendations = data;
+      });
+    }
   }
 }
