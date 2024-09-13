@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/genres")
+@CrossOrigin(origins = "http://localhost:4200")
 @Tag(name = "Genre", description = "APIs for managing Genres")
 public class GenreController {
 

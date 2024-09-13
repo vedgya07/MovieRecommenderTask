@@ -18,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin("*")
 @Tag(name = "Users", description = "APIs for managing Users")
 public class UserController {
 

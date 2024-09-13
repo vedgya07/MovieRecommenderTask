@@ -5,6 +5,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "movies")
 public class Movie {
@@ -23,29 +31,29 @@ public class Movie {
     
     private String directorName;
 
-    @ManyToMany
-    @JoinTable(
-            name = "movie_genres",
-            joinColumns = @JoinColumn(name = "movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id")
-    )
-    private Set<Genre> genres = new HashSet<>();
+ // Many movies can have one genre
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "genre_id", nullable = false)  // Enforces foreign key
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonManagedReference 
+    private Genre genre;
     
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+    @JsonBackReference 
     private List<Rating> ratings;
 
     
 	public Movie() {
 	}
 
-	public Movie(Long id, String title, String description, String imageUrl, String directorName, Set<Genre> genres) {
+	public Movie(Long id, String title, String description, String imageUrl, String directorName, Genre genre) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.imageUrl = imageUrl;
 		this.directorName = directorName;
-		this.genres = genres;
+		this.genre = genre;
 	}
 
 	public Long getId() {
@@ -88,19 +96,25 @@ public class Movie {
 		this.directorName  = directorName;
 	}
 
-	public Set<Genre> getGenres() {
-		return genres;
-	}
+	public Genre getGenre() {
+        return genre;
+    }
 
-	public void setGenres(Set<Genre> genres) {
-		this.genres = genres;
-	}
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
 
-	@Override
-	public String toString() {
-		return "Movie [id=" + id + ", title=" + title + ", description=" + description + ", imageUrl=" + imageUrl
-				+ ", director=" + directorName + ", genres=" + genres + "]";
-	}
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", directorName='" + directorName + '\'' +
+                ", genre=" + genre +
+                '}';
+    }
 
     
 }

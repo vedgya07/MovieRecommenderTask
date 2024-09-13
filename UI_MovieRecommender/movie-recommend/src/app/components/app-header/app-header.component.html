@@ -1,0 +1,25 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+      <mat-nav-list>
+        <mat-list-item [routerLink]="['']">Home</mat-list-item>
+        <mat-list-item [routerLink]="['movies']">Movies</mat-list-item>
+        <mat-list-item [routerLink]="['recommendations']">Recommendations</mat-list-item>
+        <mat-list-item [matMenuTriggerFor]="genreMenu">Genre</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>MovieRec</span>
+        <span class="spacer"></span>
+        <button mat-button [routerLink]="['']">Home</button>
+        <button mat-button [routerLink]="['movies']">Movies</button>
+        <button mat-button [routerLink]="['recommendations']">Recommendations</button>
+        <button mat-button [routerLink]="['admin']">Admin</button>
+      </mat-toolbar>
+      <!-- Content goes here -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

@@ -27,9 +27,10 @@ public class SecurityConfig {
         http
         .csrf().disable()
             .authorizeRequests()
-           // .requestMatchers("/api/users/**").permitAll()
-               .requestMatchers("/api/users/**").hasRole("ADMIN")
-                .requestMatchers("/api/movies/**", "/api/genres/**", "/api/ratings/**").authenticated()
+            .requestMatchers("/api/users/**").permitAll()
+            .requestMatchers("/api/movies/**", "/api/genres/**", "/api/ratings/**").permitAll()
+              // .requestMatchers("/api/users/**").hasRole("ADMIN")
+               // .requestMatchers("/api/movies/**", "/api/genres/**", "/api/ratings/**").authenticated()
                 .anyRequest().permitAll()
             .and()
             .formLogin()

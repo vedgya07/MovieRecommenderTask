@@ -3,6 +3,8 @@ package com.example.movie.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "ratings")
 public class Rating {
@@ -17,6 +19,7 @@ public class Rating {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonManagedReference
     private User user;
 
     private int noveltyScore;

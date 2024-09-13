@@ -24,7 +24,7 @@ public class RecommendationService {
 
   
     public List<Movie> getSimilarMovies(Movie movie) {
-        return movieRepository.findByGenresIn(movie.getGenres())
+        return movieRepository.findByGenre(movie.getGenre())
                 .stream()
                 .filter(m -> !m.equals(movie)) // Excluding the original movie
                 .collect(Collectors.toList());

@@ -1,0 +1,46 @@
+
+.admin-card {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+   
+ 
+  }
+  
+  mat-card-header {
+    background-color: #bfb0b0; 
+   
+ 
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  mat-form-field mat-label {
+    font-weight: bold;
+  }
+  
+  mat-card-content {
+    padding: 20px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .admin-card {
+      padding: 10px;
+    }
+  
+    mat-form-field {
+      margin-bottom: 15px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  

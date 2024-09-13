@@ -3,7 +3,9 @@ package com.example.movie.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.movie.entity.Genre;
 import com.example.movie.entity.Movie;
+import com.example.movie.repository.GenreRepository;
 import com.example.movie.repository.MovieRepository;
 
 import java.util.List;
@@ -13,6 +15,9 @@ public class MovieService {
 
     @Autowired
     private MovieRepository movieRepository;
+    
+    @Autowired
+    private GenreRepository genreRepository;
 
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
@@ -26,11 +31,19 @@ public class MovieService {
         return movieRepository.save(movie);
     }
 
+    public Movie createMovie(Movie movie) {
+        Genre genre = genreRepository.findById(movie.getGenre().getId())
+                .orElseThrow(() -> new RuntimeException("Genre not found"));
+
+        movie.setGenre(genre);
+        return movieRepository.save(movie);
+    }
+    
     public void deleteMovie(Long id) {
         movieRepository.deleteById(id);
     }
 
     public List<Movie> getMoviesByGenre(String genreName) {
-        return movieRepository.findByGenres_Name(genreName);
+        return movieRepository.findByGenre_Name(genreName);
     }
 }

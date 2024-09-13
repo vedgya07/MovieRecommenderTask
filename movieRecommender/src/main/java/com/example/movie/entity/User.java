@@ -34,6 +34,7 @@ public class User implements UserDetails {
 		this.password = password;
 		this.role = role;
 	}
+    
 
 	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -41,6 +42,7 @@ public class User implements UserDetails {
         authorities.add(() -> "ROLE_" + role); // Convert role to authority
         return authorities;
     }
+	
 
     @Override
     public String getPassword() {

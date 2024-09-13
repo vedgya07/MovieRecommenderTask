@@ -1,0 +1,43 @@
+<mat-card class="admin-card">
+    <mat-card-header>
+      <mat-card-title>Add New Movie</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" #movieForm="ngForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput [(ngModel)]="movie.title" name="title" required>
+          <mat-error *ngIf="movieForm.submitted && !movie.title">Title is required</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea matInput [(ngModel)]="movie.description" name="description" required></textarea>
+          <mat-error *ngIf="movieForm.submitted && !movie.description">Description is required</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Image URL</mat-label>
+          <input matInput [(ngModel)]="movie.imageUrl" name="imageUrl" required>
+          <mat-error *ngIf="movieForm.submitted && !movie.imageUrl">Image URL is required</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Director Name</mat-label>
+          <input matInput [(ngModel)]="movie.directorName" name="directorName" required>
+          <mat-error *ngIf="movieForm.submitted && !movie.directorName">Director Name is required</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Genre</mat-label>
+          <mat-select [(ngModel)]="movie.genre" name="genre" required>
+            <mat-option *ngFor="let genre of genres" [value]="genre">{{ genre.id }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="movieForm.submitted && !movie.genre">Genre is required</mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit">Add Movie</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

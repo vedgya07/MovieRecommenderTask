@@ -1,0 +1,17 @@
+<h1>Welcome to the Movie Recommender App</h1>
+
+<div class="movie-list">
+    <mat-card *ngFor="let movie of movies" class="movie-card">
+      <mat-card-header>
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="movie.imageUrl" alt="{{movie.title}}">
+      <mat-card-content>
+        <p>{{ movie.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [routerLink]="['/movies', movie.id]">View Details</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

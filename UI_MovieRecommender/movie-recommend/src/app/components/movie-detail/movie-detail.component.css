@@ -1,0 +1,86 @@
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    
+  }
+  
+  mat-card {
+    width: 50%; /* Makes the card half of its container’s width */
+    max-width: 600px; /* Optional: Sets a maximum width for the card */
+    margin: 16px 0; /* Adds spacing above and below the card */
+    display: flex;
+    flex-direction: column;
+    background-color: #bfb0b0; /* White background for the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  mat-card img {
+    width: 100%; /* Ensures the image covers the full width of the card */
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio */
+  }
+  
+  mat-card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-card-content h2 {
+    margin-top: 0; /* Removes the top margin to push the title to the top */
+    color: #000; /* Dark color for the title */
+  }
+  
+  mat-card-content p {
+    color: #333; /* Darker color for the description */
+    margin: 8px 0 0;
+  }
+  
+  .movie-card {
+    width: 100%; /* Full width within the recommendations container */
+    max-width: 300px; /* Optional: Sets a maximum width for recommended movie cards */
+  }
+ 
+  /* CSS for handling responsive layout */
+.recommendations-list {
+    display: grid;
+    gap: 16px; /* Space between cards */
+    justify-content: center; /* Center the cards horizontally */
+  }
+  
+  /* Single movie case: center the movie card and make it one-third of the container's width */
+  .recommendations-list:only-child {
+    grid-template-columns: repeat(1, minmax(0, 100%));
+    max-width: 33%; /* One-third width for a single movie */
+  }
+  
+  /* Multiple movies case: display up to three cards per row */
+  @media (min-width: 600px) {
+    .recommendations-list {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid with 200px min width */
+    }
+  }
+  
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px; /* Max width for each movie card */
+  }
+  
+  img {
+    width: 100%; /* Ensure images cover the width of the card */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  mat-card-content {
+    text-align: center; /* Center text within the card */
+  }
+  
+  button {
+    margin-top: 10px; /* Add margin to the top of the button */
+  }
+  

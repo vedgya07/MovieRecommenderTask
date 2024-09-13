@@ -1,0 +1,41 @@
+@media (max-width: 600px) {
+    .movie-list {
+      grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+  }
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    background-color: #bfb0b0; /* White background for the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .mat-card-title {
+    font-size: 1.25rem;
+    color: #000; /* Dark color for the title */
+  }
+  
+  .mat-card-content p {
+    color: #333; /* Darker color for the description */
+    margin: 0;
+  }
+  
+  .mat-card-actions {
+    padding: 16px;
+  }
+  .movie-card img {
+    width: 100%; /* Makes image fit the card width */
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures images cover the area and maintain aspect ratio */
+  }
+  
